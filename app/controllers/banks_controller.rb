@@ -14,10 +14,12 @@ class BanksController < ApplicationController
   end
   
   def update
+    @user = current_user
     @bank = params[:total]
   end
 
   def show
+    @bank
   end
 
 end
