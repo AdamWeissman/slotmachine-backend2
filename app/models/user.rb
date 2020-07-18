@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one: bank
+  has_one :bank
 
   has_secure_password
 
