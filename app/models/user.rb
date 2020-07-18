@@ -1,14 +1,9 @@
 class User < ApplicationRecord
+  has_one: bank
 
-  def change
-    create_table :users do |t|
-      t.string :name
-      t.string :email
-      t.string :password_digest
+  has_secure_password
 
-      t.timestamps
-    end
-  end
-
+  validates :email, uniqueness: true
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i}
 
 end
